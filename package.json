@@ -7,10 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "uploadService": "uploadService/ node index.js",
     "transcodeService": "transcodeService/ node index.js",
+    "streamingService": "videoStreamingService/ node index.js",
     "dev:uploadService": "nodemon uploadService/index.js",
     "dev:transcodeService": "nodemon transcodeService/index.js",
-    "start": "concurrently \"npm run uploadService\" \"npm run transcodeService\"",
-    "dev": "concurrently \"npm run dev:uploadService\" \"npm run dev:transcodeService\""
+    "dev:streamingService": "nodemon videoStreamingService/index.js",
+    "start": "concurrently \"npm run uploadService\" \"npm run transcodeService\" \"npm run streamingService\"",
+    "dev": "concurrently \"npm run dev:uploadService\" \"npm run dev:transcodeService \" \"npm run dev:streamingService\""
   },
   "keywords": [],
   "author": "",

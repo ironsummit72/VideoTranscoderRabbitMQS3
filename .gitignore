@@ -1,4 +1,5 @@
 node_modules
 .transcodeService.env
 .uploadService.env
+.streamingService.env
 todo.md 
