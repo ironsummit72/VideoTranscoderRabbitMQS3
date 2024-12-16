@@ -89,7 +89,10 @@ async function transcodeToHLS(inputFilePath,videoNameForOutputFile) {
             "-hls_time 4",
             "-hls_playlist_type vod",
           ])
-          .output(outputPath)
+          .output(outputPath).on('progress',(progress)=>{
+            console.log(`processing current video resolution ${resolution.name}....${Math.round(progress.percent)}% frames ${progress.frames}`);
+            
+          })
           .on("end", resolve)
           .on("error", reject)
           .run();
